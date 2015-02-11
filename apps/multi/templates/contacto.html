@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    {% load i18n %}
+    {{ LANGUAGE_CODE }}
+    <form action="" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value='{% trans "Enviar" %}' />
+    </form>
+
+    <form action="{% url 'set_language' %}" method="post">
+      {% csrf_token %}
+      <input name="next" type="hidden" value="{{ redirect_to }}" />
+      <select name="language">
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+          {{ language.name_local }} ({{ language.code }})
+        </option>
+        {% endfor %}
+      </select>
+      <input type="submit" value="Go" />
+    </form>
+
+    {% if LANGUAGE_CODE == 'es'%}
+
+    <form name="setLangEnglish" action="/i18n/setlang/" method="POST">{% csrf_token %}
+      <input name="next" type="hidden" value="/" />
+      <input type="hidden" name="language" value="en" />
+      <a href="#" onclick="document.setLangEnglish.submit();return false;">English version</a>
+    </form>
+
+    {% elif LANGUAGE_CODE == 'en' %}
+
+    <form name="setLangSpanish" action="/i18n/setlang/" method="POST">{% csrf_token %}
+      <input name="next" type="hidden" value="/" />
+      <input type="hidden" name="language" value="es" />
+      <a href="#" onclick="document.setLangSpanish.submit();return false;">Versión español</a>
+    </form>
+
+    {% endif %}
+  </body>
+</html>
