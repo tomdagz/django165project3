@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-10 22:37-0600\n"
+"POT-Creation-Date: 2015-02-11 22:08-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: app2/settings/local.py:26
+#: app2/settings.py:81 app2/settings_/base.py:75
 msgid "Inglés"
 msgstr "Inglish"
 
-#: app2/settings/local.py:27
+#: app2/settings.py:82 app2/settings_/base.py:76
 msgid "Español"
 msgstr "Spanish"
 
@@ -56,3 +56,17 @@ msgstr "Comments"
 #: apps/multi/templates/contacto.html:11
 msgid "Enviar"
 msgstr "Send"
+
+#: apps/multi/templates/contacto.html:14
+msgid ""
+"\n"
+"    <p>\n"
+"      Por favor <span>entregate</span> aqui y ahora <b>no te hagas</b>\n"
+"    </p>\n"
+"    "
+msgstr ""
+"\n"
+"    <p>\n"
+"      Please <span>here</span> now <b>do it</b>\n"
+"    </p>\n"
+"    "

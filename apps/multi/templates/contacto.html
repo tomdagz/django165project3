@@ -11,6 +11,12 @@
       <input type="submit" value='{% trans "Enviar" %}' />
     </form>
 
+    {% blocktrans %}
+    <p>
+      Por favor <span>entregate</span> aqui y ahora <b>no te hagas</b>
+    </p>
+    {% endblocktrans %}
+
     <form action="{% url 'set_language' %}" method="post">
       {% csrf_token %}
       <input name="next" type="hidden" value="{{ redirect_to }}" />
