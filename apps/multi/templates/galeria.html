@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    {% if videos %}
+
+      {% for video in videos %}
+
+        <h3><strong>{{ video.nombre }}</strong></h3>
+        <img src="{{ video.cover.url }}" alt=""/>
+        <p>
+          <a href="http://www.youtube.com/v/{{ video.get_url_id }}?fs=1&amp;autoplay=1">REPRODUCIR </a>
+        </p>
+
+      {% endfor %}
+
+    {% endif%}
+  </body>
+</html>
