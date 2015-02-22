@@ -7,9 +7,13 @@ from django.utils.translation import ugettext_lazy as _
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR.child('db.sqlite3'),#os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'app2', # Or path to database file if using sqlite3.
+        # The following settings are not used with sqlite3:
+        'USER': 'app2user',
+        'PASSWORD': '123456',
+        'HOST': 'localhost', # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'PORT': '',    }
 }
 
 STATIC_URL = '/static/'

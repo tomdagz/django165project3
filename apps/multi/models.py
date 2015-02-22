@@ -20,3 +20,7 @@ class Video(models.Model):
 
   def get_url_id(self):
     return self.url.split('=')[1]
+
+class Ruta(models.Model):
+    titulo   = models.CharField(u'Título',max_length=20,unique=True,help_text=u'Máximo 20 caracteres')
+    especial = models.BooleanField()   
